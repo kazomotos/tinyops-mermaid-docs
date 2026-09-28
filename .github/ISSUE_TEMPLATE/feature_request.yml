@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest an improvement to TinyOps Mermaid.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: This issue is public. Describe the workflow without customer-confidential content.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What outcome would be useful?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-data confirmation
+      options:
+        - label: I removed confidential and personal data from this request.
+          required: true

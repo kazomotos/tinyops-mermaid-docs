@@ -1,0 +1,12 @@
+{
+  "name": "tinyops-mermaid-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public documentation and trust center for TinyOps Mermaid",
+  "scripts": {
+    "test": "node --test tests/site.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

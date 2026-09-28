@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Security architecture and vulnerability reporting for TinyOps Mermaid.">
+  <meta name="theme-color" content="#0c66e4">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <title>Security · TinyOps Mermaid</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-shell"><a class="brand" href="index.html" aria-label="TinyOps Mermaid home"><img src="assets/logo.svg" alt="" width="32" height="32"><span>TinyOps Mermaid</span></a><nav class="site-nav" aria-label="Main navigation"><a href="getting-started.html">Get started</a><a href="export.html">Export</a><a href="security.html" aria-current="page">Security</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav></div></header>
+  <main id="main" class="page-shell">
+    <article class="copy">
+      <p class="eyebrow">Trust center</p>
+      <h1>Security</h1>
+      <p class="lead">TinyOps Mermaid uses strict local rendering, sanitization, bounded image generation, and minimal Atlassian permissions.</p>
+
+      <h2 id="architecture">Architecture</h2>
+      <ul>
+        <li><strong>No network egress:</strong> no external rendering endpoint or vendor backend receives diagram content.</li>
+        <li><strong>Browser and Forge processing:</strong> rendering runs inside the Forge Custom UI context.</li>
+        <li><strong>Atlassian storage:</strong> macro configuration and export attachments remain on the Confluence page.</li>
+        <li><strong>Minimal permission:</strong> the app declares <code>write:confluence-file</code> to create export attachments.</li>
+      </ul>
+
+      <h2 id="controls">Rendering controls</h2>
+      <div class="table-wrap"><table><thead><tr><th>Control</th><th>Implementation</th></tr></thead><tbody><tr><td>Mermaid security</td><td>Strict security mode and an allowlisted configuration</td></tr><tr><td>Input bound</td><td>20,000-character source limit</td></tr><tr><td>SVG sanitization</td><td>DOMPurify SVG profile plus removal of scriptable and external content</td></tr><tr><td>Image bound</td><td>4,096-pixel side and 16-million-pixel canvas-area limits</td></tr><tr><td>Attachment references</td><td>Validated Atlassian Media identifiers only</td></tr><tr><td>Error handling</td><td>Sanitized user-facing parser errors</td></tr></tbody></table></div>
+      <p>Inline style support is limited to the styles Mermaid requires to render SVG. The Forge content-security policy does not allow external network connections for diagram rendering.</p>
+
+      <h2 id="dependencies">Dependencies and releases</h2>
+      <p>Production dependencies are locked, automated tests cover normalization, sanitization, attachment reuse, pagination, and export-resource behavior, and dependency audits are part of release verification. Releases require a successful production build and relevant automated tests.</p>
+
+      <h2 id="report">Report a vulnerability</h2>
+      <div class="callout callout--warning"><strong>Do not disclose security vulnerabilities in a public GitHub issue.</strong></div>
+      <p>Use <a href="https://github.com/kazomotos/tinyops-mermaid-docs/security/advisories/new">GitHub's private vulnerability reporting form</a>. Include affected behavior, reproducible steps, impact, and a safe proof of concept. Remove secrets, access tokens, customer content, and personal data.</p>
+      <p>We will acknowledge a valid report within two business days, investigate according to severity, and coordinate disclosure after a fix is available. This target is not a guarantee of resolution time.</p>
+
+      <h2 id="scope">Current scope</h2>
+      <p>This statement covers TinyOps Mermaid for Confluence Cloud. It does not cover Atlassian's own platform, Confluence, Forge, GitHub Pages, or software outside the TinyOps app.</p>
+    </article>
+    <aside class="side-nav" aria-label="On this page"><strong>On this page</strong><a href="#architecture">Architecture</a><a href="#controls">Rendering controls</a><a href="#dependencies">Dependencies</a><a href="#report">Report privately</a><a href="#scope">Scope</a></aside>
+  </main>
+  <footer class="site-footer"><div class="footer-shell"><span>© 2026 TinyOps. TinyOps Mermaid is currently in pilot.</span><nav class="footer-links" aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="security.html">Security</a><a href="support.html">Support</a></nav></div></footer>
+</body>
+</html>

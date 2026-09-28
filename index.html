@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Export-ready Mermaid diagrams for Confluence with live preview, large-diagram controls, and no external rendering service.">
+  <meta name="theme-color" content="#0c66e4">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <title>TinyOps Mermaid for Confluence</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="TinyOps Mermaid home">
+        <img src="assets/logo.svg" alt="" width="32" height="32">
+        <span>TinyOps Mermaid</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="getting-started.html">Get started</a>
+        <a href="export.html">Export</a>
+        <a href="security.html">Security</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Mermaid diagrams for Confluence Cloud</p>
+        <h1>Diagrams that stay useful outside the browser.</h1>
+        <p class="lead">Write with live preview, navigate large diagrams, and preserve readable output in Confluence PDF and Word exports—without sending diagram data to an external rendering service.</p>
+        <div class="actions">
+          <a class="button" href="getting-started.html">Read the quick start</a>
+          <a class="button button--secondary" href="export.html">Understand export</a>
+        </div>
+        <p class="trust-note">Rendered inside Atlassian Forge—no external diagram service</p>
+      </div>
+
+      <div class="product-card" aria-label="Product interface illustration">
+        <div class="product-card__header">
+          <span>Architecture overview</span>
+          <span class="badge">PDF &amp; Word ready</span>
+        </div>
+        <div class="product-card__body">
+          <div class="editor-demo">
+            <pre><code>flowchart LR
+  User[Team] --> Wiki
+  Wiki[Confluence]
+  Wiki --> Forge
+  Forge[TinyOps]
+  Forge --> PDF
+  Forge --> Word</code></pre>
+          </div>
+          <div class="diagram-demo">
+            <svg viewBox="0 0 240 210" role="img" aria-label="A team connects through Confluence and TinyOps to PDF and Word exports">
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M0 0 10 5 0 10z" fill="#44546f"/>
+                </marker>
+              </defs>
+              <g fill="none" stroke="#44546f" stroke-width="2" marker-end="url(#arrow)">
+                <path d="M120 42v25"/>
+                <path d="M120 104v25"/>
+                <path d="M120 166H61v16"/>
+                <path d="M120 166h59v16"/>
+              </g>
+              <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+                <rect x="78" y="10" width="84" height="32" rx="5" fill="#e9f2ff" stroke="#0c66e4"/>
+                <text x="120" y="30" fill="#172b4d">Team</text>
+                <rect x="68" y="68" width="104" height="36" rx="5" fill="#fff" stroke="#8590a2"/>
+                <text x="120" y="90" fill="#172b4d">Confluence</text>
+                <rect x="72" y="130" width="96" height="36" rx="5" fill="#dcfff1" stroke="#22a06b"/>
+                <text x="120" y="152" fill="#216e4e">TinyOps</text>
+                <rect x="27" y="182" width="68" height="26" rx="4" fill="#fff" stroke="#8590a2"/>
+                <text x="61" y="199" fill="#172b4d">PDF</text>
+                <rect x="145" y="182" width="68" height="26" rx="4" fill="#fff" stroke="#8590a2"/>
+                <text x="179" y="199" fill="#172b4d">Word</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="page-shell section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Built for documentation workflows</p>
+          <h2>More than a renderer</h2>
+          <p>TinyOps Mermaid focuses on the moments where technical diagrams usually become frustrating: authoring, reviewing a dense graph, and exporting a page.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">&lt;/&gt;</span>
+            <h3>Live authoring</h3>
+            <p>Validate Mermaid syntax as you write, start from useful templates, and save only after the preview is ready.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">↗</span>
+            <h3>Large-diagram controls</h3>
+            <p>Zoom, scroll, use detail mode, or open fullscreen without squeezing a complex architecture into a fixed box.</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">↓</span>
+            <h3>Export-aware output</h3>
+            <p>Prepare readable snapshots for Confluence PDF and Word export, including pagination for diagrams that exceed safe image bounds.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="page-shell section-shell">
+        <div class="section-heading">
+          <p class="eyebrow">Trust by architecture</p>
+          <h2>Diagram content stays in Atlassian</h2>
+          <p>The app renders inside Forge, stores configuration with the Confluence macro, and stores generated export images as attachments on the same page.</p>
+        </div>
+        <div class="status-strip" aria-label="Security and privacy summary">
+          <div class="status-item"><strong>No egress</strong><span>No external rendering API</span></div>
+          <div class="status-item"><strong>No analytics</strong><span>No user tracking</span></div>
+          <div class="status-item"><strong>Minimal scope</strong><span>Confluence file write only</span></div>
+          <div class="status-item"><strong>Sanitized SVG</strong><span>Strict rendering and validation</span></div>
+        </div>
+        <div class="actions">
+          <a class="button button--secondary" href="security.html">Read the security model</a>
+          <a class="button button--secondary" href="privacy.html">Read the privacy policy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <span>© 2026 TinyOps. TinyOps Mermaid is currently in pilot.</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="privacy.html">Privacy</a>
+        <a href="security.html">Security</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

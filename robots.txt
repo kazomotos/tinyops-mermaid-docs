@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kazomotos.github.io/tinyops-mermaid-docs/sitemap.xml
