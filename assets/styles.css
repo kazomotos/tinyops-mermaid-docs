@@ -445,6 +445,11 @@ h3 {
   padding-left: 22px;
 }
 
+.legal-address {
+  color: var(--muted);
+  font-style: normal;
+}
+
 .copy li + li {
   margin-top: 8px;
 }

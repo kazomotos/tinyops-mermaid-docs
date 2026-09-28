@@ -11,6 +11,7 @@ const pages = [
   'privacy.html',
   'security.html',
   'support.html',
+  'legal-notice.html',
   '404.html'
 ];
 
@@ -36,7 +37,7 @@ test('pages provide metadata, accessibility basics, and a restrictive CSP', () =
 });
 
 test('internal links and referenced local assets resolve', () => {
-  const localReference = /(?:href|src)="(?!https?:|#)([^"?#]+)(?:[?#][^"]*)?"/g;
+  const localReference = /(?:href|src)="(?!https?:|mailto:|tel:|#)([^"?#]+)(?:[?#][^"]*)?"/g;
 
   for (const page of pages) {
     const html = read(page);
@@ -79,4 +80,19 @@ test('trust claims document storage, egress, permissions, and retention', () => 
   assert.match(privacy, /same page/i);
   assert.match(privacy, /Retention follows/i);
   assert.match(privacy, /does not automatically delete/i);
+});
+
+test('legal notice identifies the provider and a working contact channel', () => {
+  const legal = read('legal-notice.html');
+  const privacy = read('privacy.html');
+  const support = read('support.html');
+
+  assert.match(legal, /Marc Hager/);
+  assert.match(legal, /Eichenstraße 1/);
+  assert.match(legal, /83626 Valley/);
+  assert.match(legal, /Germany \/ Deutschland/);
+  assert.match(legal, /mailto:marc-hager@outlook\.com/);
+  assert.match(legal, /standard, customizable end-user agreement/i);
+  assert.match(privacy, /legal-notice\.html/);
+  assert.match(support, /mailto:marc-hager@outlook\.com/);
 });
